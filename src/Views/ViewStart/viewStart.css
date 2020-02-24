@@ -1,0 +1,55 @@
+.ViewStart__h1 {
+  margin: 20px auto;
+  text-align: center;
+  font-size: 16px;
+}
+
+.ViewStart__h2 {
+  font-size: 14px;
+  width: 100vw;
+  height: 50px;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.ViewStart_city {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  height: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #4331ab;
+  background-color: #1B4778;
+}
+
+.ViewStart__temp {
+  font-weight: 600;
+  height: 50px;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 50px;
+  padding-top: 20px;
+  border: 1px solid #4331ab;
+  background-color: #1B4778;
+}
+
+.ViewStart__pogoda {
+  background-color: #1B4778;
+}
+
+.ViewStart__img1 {
+  padding: 30px 0px;
+  width: 50px;
+  height: 50px;
+}
+
+.ViewStart__img {
+  border: 10px solid #1B4778;
+  background-color: #427cbf;
+  text-align: center;
+}
+
+.ViewStart__imgAlert {
+  background-color: #f50a0a;
+}
