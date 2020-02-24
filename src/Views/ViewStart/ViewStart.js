@@ -78,7 +78,7 @@ class ViewStart extends React.Component {
       }
 
       wiatr = () => {
-        if(this.state.wiatr > 1){
+        if(this.state.wiatr > 8){
             return <div className=" ViewStart__img ViewStart__imgAlert">
                 <img className="ViewStart__img1" src={wiatr}/> 
                 <p>Uwaga silny wiatr!</p> 
@@ -149,18 +149,19 @@ class ViewStart extends React.Component {
             <>
             <h1 className="ViewStart__h1">Witam na stronie poswięconej pogodzie</h1>
             <h2 className="ViewStart__h2">Nie chcesz zmoknąc? <span>sprawdz pogodę!</span></h2>
+            <div className="ViewStart__pogoda">Pogoda teraz-dzisiaj godz:
+            {this.state.godzina<10 ? 0+this.state.godzina : this.state.godzina}:
+            {this.state.minuta<10 ? 0+this.state.minuta:this.state.minuta}</div>
             <div className="ViewStart_city">{this.state.miasto}</div>
             <div className="ViewStart__temp">
             <div>Temperatura<p>{this.state.temperatura}&#176;C</p></div>
             <div>Wiatr: <p>{this.state.wiatr} km/s</p></div>
             <div>Ciśnienie <p>{this.state.cisnienie}hPa</p></div>
             </div>
-            <div className="ViewStart__pogoda">Pogoda teraz-dzisiaj godz:
-            {this.state.godzina<10 ? 0+this.state.godzina : this.state.godzina}:
-            {this.state.minuta<10 ? 0+this.state.minuta:this.state.minuta}</div>
             
             
-            <div style={{display:'grid',gridTemplateColumns:`repeat(${this.state.wiatr>1?3:2},1fr)`}} className="ViewStart__img">
+            
+            <div style={{display:'grid',gridTemplateColumns:`repeat(${this.state.wiatr>8?3:2},1fr)`}} className="ViewStart__img">
             {this.sprawdz()}
             {this.temperatura()}
             {this.wiatr()}

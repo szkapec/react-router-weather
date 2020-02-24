@@ -6,7 +6,7 @@
 
 .ViewStart__h2 {
   font-size: 14px;
-  width: 100vw;
+  width: 100%;
   height: 50px;
   padding-top: 20px;
   text-align: center;
@@ -52,4 +52,8 @@
 
 .ViewStart__imgAlert {
   background-color: #f50a0a;
+}
+
+.ViewStart__img > p {
+  font-weight: 800;
 }

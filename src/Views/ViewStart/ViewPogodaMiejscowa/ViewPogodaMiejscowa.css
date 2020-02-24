@@ -1,3 +1,26 @@
 .viewPogoda__div {
-    
+    margin-left: 40px;
+}
+
+.opis {
+    font-weight: bold;
+}
+
+.viewPogodaMiejscowa > div{
+    padding: 20px;
+    align-items: center;
+    align-content: center;
+    background-color: rgb(166, 194, 226);
+}
+
+.viewPogodaImages{
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.ViewPogodaImagesDiv {
+  display: flex;
+  border-top: 1px solid black;
 }
