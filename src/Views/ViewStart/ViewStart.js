@@ -20,7 +20,7 @@ class ViewStart extends React.Component {
     state = {
         value: '',
         date: '',
-        miasto: '',
+        miasto: 'Lublin',
         wschod: '',
         zachod: '',
         temperatura: '',
@@ -78,7 +78,7 @@ class ViewStart extends React.Component {
       }
 
       wiatr = () => {
-        if(this.state.wiatr > 8){
+        if(this.state.wiatr > 60){
             return <div className=" ViewStart__img ViewStart__imgAlert">
                 <img className="ViewStart__img1" src={wiatr} alt="wiatr"/> 
                 <p>Uwaga silny wiatr!</p> 
@@ -151,13 +151,13 @@ class ViewStart extends React.Component {
             <div className="ViewStart_city">{this.state.miasto}</div>
             <div className="ViewStart__temp">
             <div>Temperatura<p>{this.state.temperatura}&#176;C</p></div>
-            <div>Wiatr: <p>{this.state.wiatr} km/s</p></div>
+            <div>Wiatr: <p>{this.state.wiatr*10} km/s</p></div>
             <div>Ciśnienie <p>{this.state.cisnienie}hPa</p></div>
             </div>
             
             
             
-            <div style={{display:'grid',gridTemplateColumns:`repeat(${this.state.wiatr>8?3:2},1fr)`}} className="ViewStart__img">
+            <div style={{display:'grid',gridTemplateColumns:`repeat(${this.state.wiatr*10>60?3:2},1fr)`}} className="ViewStart__img">
             {this.sprawdz()}
             {this.temperatura()}
             {this.wiatr()}

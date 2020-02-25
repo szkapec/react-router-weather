@@ -6,7 +6,7 @@ class ViewCurrent extends React.Component {
     state= {
         wartoscSuwaka: '',
         flaga: false,
-        miasto: 'Warszawa',
+        miasto: 'Lublin',
         tempA: '',
         wilgotnoscA: '',
         opadyA: '',
@@ -26,19 +26,16 @@ class ViewCurrent extends React.Component {
 
         tempD: '',
         godzinaD: '',
+        wiatrD:'',
+        opadyD: '',
+        wilgotnoscD: '',
     }
  
 
 componentDidUpdate(prevProps,prevState) {
-
- 
-
-    
     if(this.state.miasto.length<3) return
     if(prevState.miasto!== this.state.miasto || prevState.wartoscSuwaka!==this.state.wartoscSuwaka){
-        {console.log(this.state.miasto)}
        const apiCurrent = `http://api.openweathermap.org/data/2.5/forecast?q=${this.state.miasto}&appid=8c0ca88fe2b8fe6d6c954e8c13f95f86&units=metric`;
-console.log('suwak')
             fetch(apiCurrent)
             .then(pojedynczy => {
                 if(pojedynczy.ok) {
@@ -52,31 +49,30 @@ console.log('suwak')
                 let samaGodzinaB = pojedynczy.list[1].dt_txt.substring(11,19)
                 let samaGodzinaC = pojedynczy.list[2].dt_txt.substring(11,19)
 
-                console.log(pojedynczy)
 
                 for(var i=0; i<15;i++){
                     if(pojedynczy.list[i]){
                         let godzina = pojedynczy.list[i].dt_txt.substring(11,13);
-                        console.log(godzina)
                         if(this.state.wartoscSuwaka==24){
                             this.setState({
                                 wartoscSuwaka: '00'
                             })
                         }
+                        
                         if(godzina===this.state.wartoscSuwaka||godzina===0+this.state.wartoscSuwaka){
                             this.setState({
                                 tempD: pojedynczy.list[i].main.temp,
                                 godzinaD: pojedynczy.list[i].dt_txt,
-                                
+                                wilgotnoscD: pojedynczy.list[i].main.humidity,
+                                opadyD: pojedynczy.list[i].clouds.all,
+                                wiatrD: pojedynczy.list[i].wind.speed,
                             })
                         }
                     }
 
-                    // console.log(pojedynczy.list[i].dt_txt.substring(11,13))
                 }
                 
 
-                console.log(pojedynczy) //15
                     this.setState({
                         flaga: false,
                         tempA: pojedynczy.list[0].main.temp,
@@ -147,12 +143,8 @@ console.log('suwak')
                 <div>
                     Podaj miasto: <input className="input__miasto" onChange={this.changeInput} type="text" placeholder="wpisz miasto"></input>
                 </div>
-                
-                <br></br> <hr></hr>
                 <div>
                     <WyswietlAll props={this.state}/>
-
-                    <div> Pogoda godzinowa: Temp: {this.state.tempD}  godzi:{this.state.godzinaD}</div>
                     <Suwak onSubmit={this.sprawdzWartoscSuwaka}/>
                 </div>
             </>
