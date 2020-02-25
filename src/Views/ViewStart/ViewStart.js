@@ -10,7 +10,7 @@ import slonce from '../../assets/weather/013-sun-8.svg';
 import dodatniaTemp from '../../assets/weather/024-thermometer-5.svg';
 import wiatr from '../../assets/weather/027-wind-sign.svg';
 import zachmurzone from '../../assets/weather/014-cloud-8.svg';
-
+import sniezka from '../../assets/weather/092-snowflake.svg';
 import './viewStart.scss'
 const api = 'https://api.openweathermap.org/data/2.5/weather?q=Warszawa&APPID=8c0ca88fe2b8fe6d6c954e8c13f95f86&units=metric'
 
@@ -45,32 +45,32 @@ class ViewStart extends React.Component {
           if(this.state.wilgotnosc>70) {
              if(this.state.temperatura>0){
                 return <div className="ViewStart__img">
-                    <img className="ViewStart__img1" src={deszcz}/>
+                    <img className="ViewStart__img1" src={deszcz} alt={deszcz}/>
                     <p>Deszcz</p>
                 </div>
              }
              else if(this.state.temperatura<=0){
                  return <div className="ViewStart__img">
-                    <img className="ViewStart__img1" src={snieg}/>
+                    <img className="ViewStart__img1" src={snieg} alt={snieg}/>
                     <p>Snieg</p>
                  </div>
              }
           }
           else if(this.state.zachmurzenie>70){
               return <div className="ViewStart__img">
-                <img className="ViewStart__img1" src={zachmurzone}/>  
+                <img className="ViewStart__img1" src={zachmurzone} alt={zachmurzone}/>  
                 <p>Zachmurzone</p>
               </div>
           }
           else if(this.state.zachmurzenie<70 && this.state.zachmurzenie>40){
               return <div className="ViewStart__img">
-                    <img className="ViewStart__img1" src={przejasnienia}/>
+                    <img className="ViewStart__img1" src={przejasnienia} alt="przejasnienia"/>
                     <p>Liczne przejasnienia</p>
               </div>
           }
           else if(this.state.zachmurzenie<=40) {
               return <div className="ViewStart__img">
-                <img className="ViewStart__img1" src={slonce}/>
+                <img className="ViewStart__img1" src={slonce} alt="slonce"/>
                 <p>Słonecznie</p>
               </div>
           }
@@ -80,7 +80,7 @@ class ViewStart extends React.Component {
       wiatr = () => {
         if(this.state.wiatr > 8){
             return <div className=" ViewStart__img ViewStart__imgAlert">
-                <img className="ViewStart__img1" src={wiatr}/> 
+                <img className="ViewStart__img1" src={wiatr} alt="wiatr"/> 
                 <p>Uwaga silny wiatr!</p> 
             </div>
         }
@@ -88,13 +88,13 @@ class ViewStart extends React.Component {
       temperatura = () => {
           if(this.state.temperatura>0){
               return <div className="ViewStart__img">
-                <img className="ViewStart__img1" src={dodatniaTemp}/>
+                <img className="ViewStart__img1" src={dodatniaTemp} alt="dodatniaTemp"/>
                 <p>Dodatnia temperatura</p>
               </div>
           }
           else if(this.state.temperatura<=0){
               return <div className="ViewStart__img">
-              <img className="ViewStart__img1" src={mroz}/>
+              <img className="ViewStart__img1" src={mroz} alt="mroz"/>
               <p>Mróz</p>
               </div>
           }
@@ -141,13 +141,9 @@ class ViewStart extends React.Component {
     render() {
 
 
-    
-
-
-
         return (
             <>
-            <h1 className="ViewStart__h1">Witam na stronie poswięconej pogodzie</h1>
+            <h1 className="ViewStart__h1"><img className="viewStart_sniezka" src={sniezka}/> Witam na stronie poswięconej pogodzie <img className="viewStart_sniezka1" src={sniezka}/></h1>
             <h2 className="ViewStart__h2">Nie chcesz zmoknąc? <span>sprawdz pogodę!</span></h2>
             <div className="ViewStart__pogoda">Pogoda teraz-dzisiaj godz:
             {this.state.godzina<10 ? 0+this.state.godzina : this.state.godzina}:

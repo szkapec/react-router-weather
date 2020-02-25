@@ -13,7 +13,7 @@ const ViewJakoscPowietrza = () => (
     }}>
 
     <div style={{gridArea:'1/1/3/2', backgroundColor: '#1B4778', borderLeft: '3px solid #1B4778' }}>
-        <img style={{width:"80px", marginTop: "40px"}} src={stopnie}/>
+        <img alt="stopnie" style={{width:"80px", marginTop: "40px"}} src={stopnie} />
     </div>
 
     <div style={{gridArea: '1/2/2/3' , marginLeft:'30px', textAlign:'center', marginTop: '20px'}}>
@@ -33,9 +33,10 @@ const ViewJakoscPowietrza = () => (
     </div>
 
         <div style={{display:'grid', gridTemplateColumns: 'repeat(3,1fr)', gridTemplateRows: '60px'}}> 
-            <button style={{border: ' 10px solid #1B4778' , backgroundColor: 'rgb(66, 124, 191)' }}>
+           
+        <button style={{border: ' 10px solid #1B4778'  , backgroundColor: 'rgb(66, 124, 191)' }}>
                 <NavLink
-                className="navigationItemLink" to="/pogoda">Aktualna pogoda
+                className="navigationItemLink" id="pierwszy" to="pogoda-aktualna">Aktualna pogoda
                 </NavLink>
             </button>
             <button style={{border: ' 10px solid #1B4778' , backgroundColor: 'rgb(66, 124, 191)'} }>
@@ -45,7 +46,7 @@ const ViewJakoscPowietrza = () => (
             </button>
             <button style={{border: ' 10px solid #1B4778' , backgroundColor: 'rgb(66, 124, 191)'}}>
                 <NavLink
-                className="navigationItemLink" to="/pogoda">Pogoda na 5 dni
+                className="navigationItemLink" to="/pogoda-5-dni">Pogoda na 5 dni
                 </NavLink>
             </button>
         </div>

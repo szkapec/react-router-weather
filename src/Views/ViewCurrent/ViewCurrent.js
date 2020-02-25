@@ -1,10 +1,161 @@
 import React from 'react';
+import Suwak from './Suwak/Suwak';
+import WyswietlAll from './WyswietlAll/WyswietlAll'
 
-const ViewCurrent = () => (
-<>
-<h2> View Current</h2>
-</>
+class ViewCurrent extends React.Component {
+    state= {
+        wartoscSuwaka: '',
+        flaga: false,
+        miasto: 'Warszawa',
+        tempA: '',
+        wilgotnoscA: '',
+        opadyA: '',
+        wiatrA: '',
+        ktoraGodzinaA: '',
+        cityA: '',
 
-)
+        wilgotnoscB:'',
+        opadyB: '',
+        wiatrB: '',
+        ktoraGodzinaB: '',
+
+        wilgotnoscC:'',
+        opadyC: '',
+        wiatrC: '',
+        ktoraGodzinaC: '',
+
+        tempD: '',
+        godzinaD: '',
+    }
+ 
+
+componentDidUpdate(prevProps,prevState) {
+
+ 
+
+    
+    if(this.state.miasto.length<3) return
+    if(prevState.miasto!== this.state.miasto || prevState.wartoscSuwaka!==this.state.wartoscSuwaka){
+        {console.log(this.state.miasto)}
+       const apiCurrent = `http://api.openweathermap.org/data/2.5/forecast?q=${this.state.miasto}&appid=8c0ca88fe2b8fe6d6c954e8c13f95f86&units=metric`;
+console.log('suwak')
+            fetch(apiCurrent)
+            .then(pojedynczy => {
+                if(pojedynczy.ok) {
+                    return pojedynczy
+                }
+                throw Error("Blad")
+            })
+            .then(pojedynczy => pojedynczy.json())
+            .then(pojedynczy => {
+                let samaGodzinaA = pojedynczy.list[0].dt_txt.substring(11,19)
+                let samaGodzinaB = pojedynczy.list[1].dt_txt.substring(11,19)
+                let samaGodzinaC = pojedynczy.list[2].dt_txt.substring(11,19)
+
+                console.log(pojedynczy)
+
+                for(var i=0; i<15;i++){
+                    if(pojedynczy.list[i]){
+                        let godzina = pojedynczy.list[i].dt_txt.substring(11,13);
+                        console.log(godzina)
+                        if(this.state.wartoscSuwaka==24){
+                            this.setState({
+                                wartoscSuwaka: '00'
+                            })
+                        }
+                        if(godzina===this.state.wartoscSuwaka||godzina===0+this.state.wartoscSuwaka){
+                            this.setState({
+                                tempD: pojedynczy.list[i].main.temp,
+                                godzinaD: pojedynczy.list[i].dt_txt,
+                                
+                            })
+                        }
+                    }
+
+                    // console.log(pojedynczy.list[i].dt_txt.substring(11,13))
+                }
+                
+
+                console.log(pojedynczy) //15
+                    this.setState({
+                        flaga: false,
+                        tempA: pojedynczy.list[0].main.temp,
+                        wilgotnoscA: pojedynczy.list[0].main.humidity,
+                        opadyA: pojedynczy.list[0].clouds.all,
+                        wiatrA: pojedynczy.list[0].wind.speed,
+                        ktoraGodzinaA: samaGodzinaA,
+                        cityA: pojedynczy.city.name,
+                        
+                        tempB: pojedynczy.list[1].main.temp,
+                        wilgotnoscB: pojedynczy.list[1].main.humidity,
+                        opadyB: pojedynczy.list[1].clouds.all,
+                        wiatrB: pojedynczy.list[1].wind.speed,
+                        ktoraGodzinaB: samaGodzinaB,
+
+                        tempC: pojedynczy.list[1].main.temp,
+                        wilgotnoscC: pojedynczy.list[1].main.humidity,
+                        opadyC: pojedynczy.list[1].clouds.all,
+                        wiatrC: pojedynczy.list[1].wind.speed,
+                        ktoraGodzinaC: samaGodzinaC,
+
+
+                    })
+                
+            })
+            .catch(error => {
+                console.log(error+ 'error')
+                this.setState({
+                    flaga: true,
+                    tempA: '',
+                    wilgotnoscA: '',
+                    opadyA: '',
+                    wiatrA: '',
+                    ktoraGodzinaA: '',
+                    cityA:'',
+                    
+                    tempB:'',
+                    wilgotnoscB:'',
+                    opadyB: '',
+                    wiatrB: '',
+                    ktoraGodzinaB:'',
+
+                    tempC:'',
+                    wilgotnoscC:'',
+                    opadyC: '',
+                    wiatrC: '',
+                    ktoraGodzinaC:'',
+                })
+            })
+        }
+        
+    }
+
+    changeInput = (e) => {
+        this.setState({
+            miasto: e.target.value,
+        })
+    }
+
+    sprawdzWartoscSuwaka = (text) => {
+        this.setState({
+            wartoscSuwaka: text,
+        })
+    }
+    render() {
+        return (
+            <>
+                <div>
+                    Podaj miasto: <input className="input__miasto" onChange={this.changeInput} type="text" placeholder="wpisz miasto"></input>
+                </div>
+                
+                <br></br> <hr></hr>
+                <div>
+                    <WyswietlAll props={this.state}/>
+
+                    <div> Pogoda godzinowa: Temp: {this.state.tempD}  godzi:{this.state.godzinaD}</div>
+                    <Suwak onSubmit={this.sprawdzWartoscSuwaka}/>
+                </div>
+            </>
+        )}} 
 
 export default ViewCurrent;
