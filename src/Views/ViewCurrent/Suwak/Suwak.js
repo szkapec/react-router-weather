@@ -34,7 +34,7 @@ licz = () => {
         <div className='suwak__div15'><div className="suwak_zegar">15:00</div></div>
         <div className='suwak__div18'><div className="suwak_zegar">18:00</div></div>
         <div className='suwak__div21'><div className="suwak_zegar">21:00</div></div>
-        <div className='suwak__div0'><div className="suwak_zegar">24:00</div></div>
+        <div className='suwak__div0'><div className="suwak_zegar"></div></div>
         <span id="currentValue"></span> <u className="currentValue">:00</u> 
     </section>
     </>

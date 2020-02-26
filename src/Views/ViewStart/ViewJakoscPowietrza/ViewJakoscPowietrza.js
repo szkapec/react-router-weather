@@ -1,7 +1,7 @@
 import React from 'react';
 import stopnie from '../../../assets/weather/102-smartphone.svg';
 import {NavLink} from 'react-router-dom';
-
+import '../viewStart.css';
 
 const ViewJakoscPowietrza = () => (
     <>
@@ -34,19 +34,19 @@ const ViewJakoscPowietrza = () => (
 
         <div style={{display:'grid', gridTemplateColumns: 'repeat(3,1fr)', gridTemplateRows: '60px'}}> 
            
-        <button style={{border: ' 10px solid #1B4778'  , backgroundColor: 'rgb(66, 124, 191)' }}>
+        <button className="hoverr" style={{border: ' 10px solid #1B4778'  , backgroundColor: 'rgb(66, 124, 191)' }}>
                 <NavLink
-                className="navigationItemLink" id="pierwszy" to="pogoda-aktualna">Aktualna pogoda
+                className="navigationItemLink2" id="pierwszy" to="pogoda-aktualna">Aktualna pogoda
                 </NavLink>
             </button>
-            <button style={{border: ' 10px solid #1B4778' , backgroundColor: 'rgb(66, 124, 191)'} }>
+            <button className="hoverr" style={{border: ' 10px solid #1B4778' , backgroundColor: 'rgb(66, 124, 191)'} }>
                 <NavLink
-                className="navigationItemLink" to="/pogoda">Pogoda godzinowa
+                className="navigationItemLink2" to="/pogoda">Pogoda godzinowa
                 </NavLink>
             </button>
-            <button style={{border: ' 10px solid #1B4778' , backgroundColor: 'rgb(66, 124, 191)'}}>
+            <button className="hoverr" style={{border: ' 10px solid #1B4778' , backgroundColor: 'rgb(66, 124, 191)'}}>
                 <NavLink
-                className="navigationItemLink" to="/pogoda-5-dni">Pogoda na 5 dni
+                className="navigationItemLink2" to="/pogoda-5-dni">Pogoda na 5 dni
                 </NavLink>
             </button>
         </div>

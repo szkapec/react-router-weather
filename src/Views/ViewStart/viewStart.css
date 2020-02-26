@@ -36,7 +36,13 @@
   /* border: 1px solid #4331ab; */
   background-color: #1B4778;
 }
-
+.hoverr:hover {
+  font-weight: 700;
+}
+.navigationItemLink2 {
+  padding:0px;
+  color: black;
+}
 .ViewStart__pogoda {
   background-color: #1B4778;
 }
@@ -95,5 +101,15 @@
     position: absolute;
     width: 30px;
     height: 30px;
+  }
+}
+@media(min-width: 700px){
+  .navigationItemLink2 {
+    padding:10px 40px;
+  }
+}
+@media(min-width:1100px){
+  .navigationItemLink2 {
+    padding:10px 50px;
   }
 }

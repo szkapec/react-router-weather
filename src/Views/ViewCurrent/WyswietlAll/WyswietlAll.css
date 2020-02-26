@@ -1,27 +1,49 @@
-.input__miasto {
+.ViewCurrent_input__miasto {
+    margin: 10px 0 0 0;
+}
+
+
+.ViewCurrent_input__miasto_text {
     padding: 10px 15px;
     border-radius: 30px;
     border: 1px solid black;
     margin: 20px 0px 30px 20px;
     width: 150px;
 }
+.ViewCurrent_wyswietlenieWarunkowe {
+    margin-left: 30px;
+    font-weight: 700;
+    margin-top: 30px;
+}
+
+@media(min-width: 350px){
+    .ViewCurrent_input__miasto {
+    margin: 10px 0 0 20px;
+    }
+}
+
+.pogrubienie {
+    font-weight: 700;
+}
 
 .wyswietl__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 200px;
-    font-size: 14px;
-    border-bottom: 0.5px solid rgb(175, 154, 154);
+    font-size: 12px;
 }
 .wyswietl__grid > div {
-    margin-left: 20px;
     margin-top: 15px;
 }
 .wyswietl__grid > div > div {
     margin-top: 10px;
-    font-weight: 700;
 }
+@media(min-width:400px){
+    .wyswietl__grid > div {
+        margin-left: 20px;
+    }
 
+}
 
 .wyswietl__miasto {
 font-weight: 700;
@@ -32,18 +54,75 @@ border-bottom: 0.5px solid rgb(175, 154, 154);
 }
 
 /* ----------------- */
-
+.wyswietl__opisImg {
+    opacity: 0;
+}
 .wyswietl_img {
     width: 80px;
     height: 80px;
     margin-left: 15px;
 }
 .wyswietl_pogodaGodzinowa {
-    margin-top: 30px;
+    margin-top: 10px;
     margin-left: 30px;
+    font-size: 12px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 30px 30px 30px 30px;
+    margin-bottom: 30px;
+}
+.wyswietl__kreska {
+    border-top: 1px solid rgb(175, 154, 154);
 }
 .wyswietl_pogodaGodzinowa > div {
     padding-top: 10px;
-    
+}
 
+@media(min-width: 700px){
+    .ViewCurrent_input__miasto {
+        padding-top: 10px;
+    }
+    .wyswietl__miasto {
+        font-size: 22px;
+    }
+    .wyswietl__grid {
+        font-size: 16px;
+    }
+    .wyswietl_pogodaGodzinowa {
+        margin-top: 20px;
+        font-size: 16px;
+        grid-template-rows: 50px 50px 50px 50px;
+        margin-bottom: 30px;
+    }
+    .wyswietl_pogodaGodzinowa > div {
+        padding: 0px;
+    }
+    #currentValue, .currentValue {
+        font-size: 12px;
+    }
+    #currentValue {
+        margin-left: 30px;
+    }
+}
+
+@media(min-width: 1200px){ 
+    .wyswietl_pogodaGodzinowa > div {
+        margin-left: 100px;
+    }
+    .ViewCurrent_input__miasto {
+        font-size: 20px;
+    }
+    .ViewCurrent_input__miasto_text {
+        padding: 15px 40px;
+    }
+    .wyswietl__grid {
+        margin-left: 50px;
+        margin-bottom: 50px;
+    }
+    .wyswietl_pogodaGodzinowa > div{
+    }
+    #currentValue, .currentValue {
+        font-size: 16px;
+        
+    }
 }

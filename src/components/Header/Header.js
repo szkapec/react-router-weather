@@ -31,7 +31,7 @@ const Header = () => (
         <li className="navigationItem">
             <NavLink
             activeClassName="navigationItemLinkActive"
-            className="navigationItemLink" to="/pogoda-aktualna">Aktualna pogoda
+            className="navigationItemLink" to="/zanieczyszczenia">Zanieczyszczenia
             </NavLink>
         </li>
         <li className="navigationItem">

@@ -140,12 +140,13 @@ componentDidUpdate(prevProps,prevState) {
     render() {
         return (
             <>
-                <div>
-                    Podaj miasto: <input className="input__miasto" onChange={this.changeInput} type="text" placeholder="wpisz miasto"></input>
+                <div className="ViewCurrent_input__miasto">
+                    Podaj miasto: <input className="ViewCurrent_input__miasto_text" onChange={this.changeInput} type="text" placeholder="wpisz miasto"></input>
                 </div>
                 <div>
-                    <WyswietlAll props={this.state}/>
-                    <Suwak onSubmit={this.sprawdzWartoscSuwaka}/>
+                    {this.state.opadyA? <WyswietlAll props={this.state}/>: this.state.miasto.length>4 && this.state.miasto!='Lublin' ? 
+                    (<div className="ViewCurrent_wyswietlenieWarunkowe">Trwa Wyszukiwanie...</div>) : null}
+                    {this.state.opadyA?<Suwak onSubmit={this.sprawdzWartoscSuwaka}/>:null}
                 </div>
             </>
         )}} 

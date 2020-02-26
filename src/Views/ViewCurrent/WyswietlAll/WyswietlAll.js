@@ -19,37 +19,42 @@ const WyswietlAll = ({props}) => {
 
         <div className="wyswietl__grid">
             <div className="wyswietl__pierwszy">
-                <div>{ktoraGodzinaA?`Godzina: ${ktoraGodzinaA}`: null}</div>
-                <div>{tempA? `Temp: ${tempA}C` : null}</div>
-                <div>{wilgotnoscA? `Wilgotność: ${wilgotnoscA}%` : null}</div>
-                <div>{opadyA? `Opady: ${opadyA}%` : null}</div>
-                <div>{wiatrA? `Wiatr: ${wiatrA*10}km/h` : null}</div>
+                <div>{ktoraGodzinaA?(<div><span className="pogrubienie">Godzina: </span>{ktoraGodzinaA}</div>): null}</div>
+                <div>{tempA? (<div><span className="pogrubienie">Temp: </span>{tempA}</div>) : null}</div>
+                <div>{wilgotnoscA? (<div><span className="pogrubienie">Wilgotność: </span>{wilgotnoscA}%</div>) : null}</div>
+                <div>{opadyA? (<div><span className="pogrubienie">Opady: </span>{opadyA}%</div>) : null}</div>
+                <div>{wiatrA? (<div><span className="pogrubienie">Wiatr: </span>{wiatrA*10} km/h</div>) : null}</div>
             </div>
             <div className="wyswietl__drugi">
-            <div>{ktoraGodzinaB?`Godzina: ${ktoraGodzinaB}`: null}</div>
-            <div>{tempB? `Temp: ${tempB}C` : null}</div>
-            <div>{wilgotnoscB? `Wilgotność: ${wilgotnoscB}%` : null}</div>
-            <div>{opadyB? `Opady: ${opadyB}%` : null}</div>
-            <div>{wiatrB? `Wiatr: ${wiatrB*10}km/h` : null}</div>
+            <div>{ktoraGodzinaB?(<div><span className="pogrubienie">Godzina: </span>{ktoraGodzinaB}</div>): null}</div>
+            <div>{tempB? (<div><span className="pogrubienie">Temp: </span>{tempB}</div>) : null}</div>
+            <div>{wilgotnoscB? (<div><span className="pogrubienie">Wilgotność: </span>{wilgotnoscB}%</div>) : null}</div>
+            <div>{opadyB? (<div><span className="pogrubienie">Opady: </span>{opadyB}%</div>) : null}</div>
+            <div>{wiatrB? (<div><span className="pogrubienie">Wiatr: </span>{wiatrB*10} km/h</div>) : null}</div>
             </div>
             <div className="wyswietl__trzeci">
-            <div>{ktoraGodzinaC?`Godzina: ${ktoraGodzinaC}`: null}</div>
-            <div>{tempC? `Temp:  ${tempC}` : null}</div>
-            <div>{wilgotnoscC? `Wilgotność: ${wilgotnoscC}%` : null}</div>
-            <div>{opadyC? `Opady: ${opadyC}%` : null}</div>
-            <div>{wiatrC? `Wiatr: ${wiatrC*10}km/h` : null}</div>
+            <div>{ktoraGodzinaC?(<div><span className="pogrubienie">Godzina: </span>{ktoraGodzinaC}</div>): null}</div>
+            <div>{tempC? (<div><span className="pogrubienie">Temp: </span>{tempC}</div>) : null}</div>
+            <div>{wilgotnoscC? (<div><span className="pogrubienie">Wilgotność: </span>{wilgotnoscC}%</div>) : null}</div>
+            <div>{opadyC? (<div><span className="pogrubienie">Opady: </span>{opadyC}%</div>) : null}</div>
+            <div>{wiatrC? (<div><span className="pogrubienie">Wiatr: </span>{wiatrC*10} km/h</div>) : null}</div>
             </div>
         </div>
 
-        <div className="wyswietl_pogodaGodzinowa" style={{display:'grid',gridTemplateColumns:'repeat(2,1fr)',gridTemplateRows:'50px 50px 50px 50px'}}>
-            <div  style={{ gridArea: '1/1/4/2'}}>{wilgotnoscD?opadyD>75 ? <img className="wyswietl_img" src={deszcz} alt="deszcz"/> : opadyD<40 ? <img className="wyswietl_img"  src={slonce} alt="slonecznie"/> : <img className="wyswietl_img"  src={przejasnienia} alt="przejasnienia"/>:null}</div>
-            <div style={{ fontWeight:'700'}}>{tempD?`Temperatura: ${tempD} C` : null}</div>
-            <div>{wilgotnoscD?`Wilgotność: ${wilgotnoscD}%`: null}</div>
-            <div>{opadyD?`Deszcz: ${opadyD}%`: null}</div>
-            <div style={{fontWeight:'700'}}>{godzinaD?` Godzina: ${godzinaD.substring(11,16)}`: null}</div>
-            <div style={{ fontWeight:'700'}} >{wiatrD?`Wiatr: ${wiatrD*10}km/h`: null}</div>
-            
-        </div>
+        <div className="wyswietl__kreska"></div>
+
+            {tempD? (
+                <div className="wyswietl_pogodaGodzinowa" style={{display:'grid'}}>
+                    <div  style={{ gridArea: '1/1/4/2'}}>{wilgotnoscD?opadyD>75 ? <img className="wyswietl_img" src={deszcz} alt="deszcz"/> : opadyD<40 ? <img className="wyswietl_img"  src={slonce} alt="slonecznie"/> : <img className="wyswietl_img"  src={przejasnienia} alt="przejasnienia"/>:null}</div>
+                    
+                    <div>{tempD?(<div><span className="pogrubienie">Temperatura: </span>{tempD}&#176;C</div>) : null}</div>
+                    <div>{wilgotnoscD?(<div><span className="pogrubienie">Wilgotność: </span>{wilgotnoscD}%</div>): null}</div>
+                    <div>{opadyD?(<div><span className="pogrubienie">Deszcz: </span>{opadyD}%</div>): null}</div>
+                    <div>{godzinaD?(<div><span className="pogrubienie">Godzina: </span>{godzinaD.substring(11,16)}</div>): null}</div>
+                    <div>{wiatrD?(<div><span className="pogrubienie">Wiatr: </span>{wiatrD*10} km/h</div>): null}</div>
+                </div>
+            ): (<div style={{margin: '20px 20px 20px', fontWeight: '700'}}>Sprawdz pogodę co trzy godziny!</div>)}
+                
 
         </>
     )

@@ -22,22 +22,15 @@
   color: black;
 }
 
+.navigationItem :hover {
+  font-weight: 700;
+}
+
 @media (min-width: 700px) {
   .nawigationWrapper {
-    display: inline-block;
-    position: fixed;
-    width: 1fr;
-  }
-  .navigationItem {
-    display: inline-block;
-    width: 16vw;
-    height: 50px;
-    text-align: center;
-    border: 1px solid #13678a;
-    background-color: #5fc1eb;
-  }
-  .navigationItemLink {
-    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 50px;
   }
 }
 
