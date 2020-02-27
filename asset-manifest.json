@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react-router-weather/static/css/main.a3763ae2.chunk.css",
+    "main.css": "/react-router-weather/static/css/main.d81aa7e2.chunk.css",
     "main.js": "/react-router-weather/static/js/main.ed68e34b.chunk.js",
     "main.js.map": "/react-router-weather/static/js/main.ed68e34b.chunk.js.map",
     "runtime-main.js": "/react-router-weather/static/js/runtime-main.83b0203b.js",
@@ -8,9 +8,9 @@
     "static/js/2.4d1023f9.chunk.js": "/react-router-weather/static/js/2.4d1023f9.chunk.js",
     "static/js/2.4d1023f9.chunk.js.map": "/react-router-weather/static/js/2.4d1023f9.chunk.js.map",
     "index.html": "/react-router-weather/index.html",
-    "precache-manifest.39a5ed2debd10de191a4fa0f8d712805.js": "/react-router-weather/precache-manifest.39a5ed2debd10de191a4fa0f8d712805.js",
+    "precache-manifest.ca2699bbed06a8c5baf8c0e45278f4d7.js": "/react-router-weather/precache-manifest.ca2699bbed06a8c5baf8c0e45278f4d7.js",
     "service-worker.js": "/react-router-weather/service-worker.js",
-    "static/css/main.a3763ae2.chunk.css.map": "/react-router-weather/static/css/main.a3763ae2.chunk.css.map",
+    "static/css/main.d81aa7e2.chunk.css.map": "/react-router-weather/static/css/main.d81aa7e2.chunk.css.map",
     "static/js/2.4d1023f9.chunk.js.LICENSE.txt": "/react-router-weather/static/js/2.4d1023f9.chunk.js.LICENSE.txt",
     "static/media/002-cloudy-13.svg": "/react-router-weather/static/media/002-cloudy-13.2776a530.svg",
     "static/media/003-snow-8.svg": "/react-router-weather/static/media/003-snow-8.a57b7ecd.svg",
@@ -26,7 +26,7 @@
   "entrypoints": [
     "static/js/runtime-main.83b0203b.js",
     "static/js/2.4d1023f9.chunk.js",
-    "static/css/main.a3763ae2.chunk.css",
+    "static/css/main.d81aa7e2.chunk.css",
     "static/js/main.ed68e34b.chunk.js"
   ]
 }
