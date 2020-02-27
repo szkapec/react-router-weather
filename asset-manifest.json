@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/react-router-weather/static/css/main.f2759dbd.chunk.css",
+    "main.js": "/react-router-weather/static/js/main.e2ba6d22.chunk.js",
+    "main.js.map": "/react-router-weather/static/js/main.e2ba6d22.chunk.js.map",
+    "runtime-main.js": "/react-router-weather/static/js/runtime-main.83b0203b.js",
+    "runtime-main.js.map": "/react-router-weather/static/js/runtime-main.83b0203b.js.map",
+    "static/js/2.1cbc7308.chunk.js": "/react-router-weather/static/js/2.1cbc7308.chunk.js",
+    "static/js/2.1cbc7308.chunk.js.map": "/react-router-weather/static/js/2.1cbc7308.chunk.js.map",
+    "index.html": "/react-router-weather/index.html",
+    "precache-manifest.917cab78606fe801ad25ca827e3e541b.js": "/react-router-weather/precache-manifest.917cab78606fe801ad25ca827e3e541b.js",
+    "service-worker.js": "/react-router-weather/service-worker.js",
+    "static/css/main.f2759dbd.chunk.css.map": "/react-router-weather/static/css/main.f2759dbd.chunk.css.map",
+    "static/js/2.1cbc7308.chunk.js.LICENSE.txt": "/react-router-weather/static/js/2.1cbc7308.chunk.js.LICENSE.txt",
+    "static/media/002-cloudy-13.svg": "/react-router-weather/static/media/002-cloudy-13.2776a530.svg",
+    "static/media/003-snow-8.svg": "/react-router-weather/static/media/003-snow-8.a57b7ecd.svg",
+    "static/media/009-rain-26.svg": "/react-router-weather/static/media/009-rain-26.a776a801.svg",
+    "static/media/013-sun-8.svg": "/react-router-weather/static/media/013-sun-8.c88df3f7.svg",
+    "static/media/014-cloud-8.svg": "/react-router-weather/static/media/014-cloud-8.0c9f38dc.svg",
+    "static/media/017-thermometer-7.svg": "/react-router-weather/static/media/017-thermometer-7.b2a58d9d.svg",
+    "static/media/024-thermometer-5.svg": "/react-router-weather/static/media/024-thermometer-5.61d0be69.svg",
+    "static/media/027-wind-sign.svg": "/react-router-weather/static/media/027-wind-sign.edf700e9.svg",
+    "static/media/092-snowflake.svg": "/react-router-weather/static/media/092-snowflake.51bbef33.svg",
+    "static/media/102-smartphone.svg": "/react-router-weather/static/media/102-smartphone.e4143c2f.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.83b0203b.js",
+    "static/js/2.1cbc7308.chunk.js",
+    "static/css/main.f2759dbd.chunk.css",
+    "static/js/main.e2ba6d22.chunk.js"
+  ]
+}
