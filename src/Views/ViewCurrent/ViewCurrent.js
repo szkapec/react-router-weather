@@ -13,16 +13,19 @@ class ViewCurrent extends React.Component {
         wiatrA: '',
         ktoraGodzinaA: '',
         cityA: '',
+        zachmurzenieA: '',
 
         wilgotnoscB:'',
         opadyB: '',
         wiatrB: '',
         ktoraGodzinaB: '',
+        zachmurzenieB: '',
 
         wilgotnoscC:'',
         opadyC: '',
         wiatrC: '',
         ktoraGodzinaC: '',
+        zachmurzenieC: '',
 
         tempD: '',
         godzinaD: '',
@@ -35,7 +38,7 @@ class ViewCurrent extends React.Component {
 componentDidUpdate(prevProps,prevState) {
     if(this.state.miasto.length<3) return
     if(prevState.miasto!== this.state.miasto || prevState.wartoscSuwaka!==this.state.wartoscSuwaka){
-       const apiCurrent = `http://api.openweathermap.org/data/2.5/forecast?q=${this.state.miasto}&appid=8c0ca88fe2b8fe6d6c954e8c13f95f86&units=metric`;
+       const apiCurrent = `https://api.openweathermap.org/data/2.5/forecast?q=${this.state.miasto}&appid=8c0ca88fe2b8fe6d6c954e8c13f95f86&units=metric`;
             fetch(apiCurrent)
             .then(pojedynczy => {
                 if(pojedynczy.ok) {
@@ -58,7 +61,6 @@ componentDidUpdate(prevProps,prevState) {
                                 wartoscSuwaka: '00'
                             })
                         }
-                        
                         if(godzina===this.state.wartoscSuwaka||godzina===0+this.state.wartoscSuwaka){
                             this.setState({
                                 tempD: pojedynczy.list[i].main.temp,
@@ -66,6 +68,7 @@ componentDidUpdate(prevProps,prevState) {
                                 wilgotnoscD: pojedynczy.list[i].main.humidity,
                                 opadyD: pojedynczy.list[i].clouds.all,
                                 wiatrD: pojedynczy.list[i].wind.speed,
+                                
                             })
                         }
                     }
@@ -81,18 +84,21 @@ componentDidUpdate(prevProps,prevState) {
                         wiatrA: pojedynczy.list[0].wind.speed,
                         ktoraGodzinaA: samaGodzinaA,
                         cityA: pojedynczy.city.name,
+                        zachmurzenieA: pojedynczy.list[0].clouds.all,
                         
                         tempB: pojedynczy.list[1].main.temp,
                         wilgotnoscB: pojedynczy.list[1].main.humidity,
                         opadyB: pojedynczy.list[1].clouds.all,
                         wiatrB: pojedynczy.list[1].wind.speed,
                         ktoraGodzinaB: samaGodzinaB,
+                        zachmurzenieB: pojedynczy.list[1].clouds.all,
 
-                        tempC: pojedynczy.list[1].main.temp,
-                        wilgotnoscC: pojedynczy.list[1].main.humidity,
-                        opadyC: pojedynczy.list[1].clouds.all,
-                        wiatrC: pojedynczy.list[1].wind.speed,
+                        tempC: pojedynczy.list[2].main.temp,
+                        wilgotnoscC: pojedynczy.list[2].main.humidity,
+                        opadyC: pojedynczy.list[2].clouds.all,
+                        wiatrC: pojedynczy.list[2].wind.speed,
                         ktoraGodzinaC: samaGodzinaC,
+                        zachmurzenieC: pojedynczy.list[2].clouds.all,
 
 
                     })
@@ -140,6 +146,7 @@ componentDidUpdate(prevProps,prevState) {
     render() {
         return (
             <>
+            <div className="ViewCurrent__container">
                 <div className="ViewCurrent_input__miasto">
                     Podaj miasto: <input className="ViewCurrent_input__miasto_text" onChange={this.changeInput} type="text" placeholder="wpisz miasto"></input>
                 </div>
@@ -148,6 +155,7 @@ componentDidUpdate(prevProps,prevState) {
                     (<div className="ViewCurrent_wyswietlenieWarunkowe">Trwa Wyszukiwanie...</div>) : null}
                     {this.state.opadyA?<Suwak onSubmit={this.sprawdzWartoscSuwaka}/>:null}
                 </div>
+            </div>
             </>
         )}} 
 

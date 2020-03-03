@@ -1,5 +1,12 @@
+.ViewCurrent__container {
+    background-color: #a6c2e2;
+    width: 100%;
+    height: 100vh;
+}
+
 .ViewCurrent_input__miasto {
-    margin: 10px 0 0 0;
+    padding: 10px 0 0 0;
+    background-color: #a6c2e2;
 }
 
 
@@ -16,9 +23,15 @@
     margin-top: 30px;
 }
 
+.wyswietl__grid-img {
+    height: 60px;
+    width: 60px;
+    padding-left: 15px;
+}
+
 @media(min-width: 350px){
     .ViewCurrent_input__miasto {
-    margin: 10px 0 0 20px;
+    padding: 10px 0 0 20px;
     }
 }
 
@@ -29,14 +42,14 @@
 .wyswietl__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 200px;
     font-size: 12px;
+    padding-bottom: 10px;
 }
 .wyswietl__grid > div {
     margin-top: 15px;
 }
 .wyswietl__grid > div > div {
-    margin-top: 10px;
+    margin-top: 20px;
 }
 @media(min-width:400px){
     .wyswietl__grid > div {
@@ -50,7 +63,8 @@ font-weight: 700;
 
 text-align: center;
 padding-bottom: 10px;
-border-bottom: 0.5px solid rgb(175, 154, 154);
+border-bottom: 2px solid rgba(86, 143, 211, 0.85)
+
 }
 
 /* ----------------- */
@@ -63,16 +77,17 @@ border-bottom: 0.5px solid rgb(175, 154, 154);
     margin-left: 15px;
 }
 .wyswietl_pogodaGodzinowa {
-    margin-top: 10px;
-    margin-left: 30px;
+    padding: 10px 0px 30px 30px;
     font-size: 12px;
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    grid-template-rows: 30px 30px 30px 30px;
-    margin-bottom: 30px;
+    grid-template-rows: 30px 30px 30px 30px 30px 30px;
+    background-color: #a6c2e2;
+
+    
 }
 .wyswietl__kreska {
-    border-top: 1px solid rgb(175, 154, 154);
+    border-top:  2px solid rgba(86, 143, 211, 0.85)
 }
 .wyswietl_pogodaGodzinowa > div {
     padding-top: 10px;
@@ -93,7 +108,7 @@ border-bottom: 0.5px solid rgb(175, 154, 154);
         font-size: 16px;
         grid-template-rows: 50px 50px 50px 50px;
         margin-bottom: 30px;
-    }
+        }
     .wyswietl_pogodaGodzinowa > div {
         padding: 0px;
     }

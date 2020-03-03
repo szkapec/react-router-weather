@@ -1,11 +1,13 @@
 import React from 'react';
-import stopnie from '../../../assets/weather/102-smartphone.svg';
+import smartfon from '../../../assets/weather/102-smartphone.svg';
 import {NavLink} from 'react-router-dom';
-import '../viewStart.css';
+import '../viewStart.scss';
+import '../../../components/Header/header.scss';
 
+const mediaMatch = window.matchMedia('(min-width: 1000)');
 const ViewJakoscPowietrza = () => (
-    <>
-    <div style={{
+    <div>
+    <div className="ViewJakoscPowietrza__styleGrid" style={{
         display: 'grid',
         gridTemplateColumns: '100px repeat(2,1fr)',
         gridTemplateRows: 'repeat(2,80px)',
@@ -13,7 +15,7 @@ const ViewJakoscPowietrza = () => (
     }}>
 
     <div style={{gridArea:'1/1/3/2', backgroundColor: '#1B4778', borderLeft: '3px solid #1B4778' }}>
-        <img alt="stopnie" style={{width:"80px", marginTop: "40px"}} src={stopnie} />
+        <img alt="smartfon" style={{width:"80px", marginTop: "40px"}} src={smartfon} />
     </div>
 
     <div style={{gridArea: '1/2/2/3' , marginLeft:'30px', textAlign:'center', marginTop: '20px'}}>
@@ -36,7 +38,7 @@ const ViewJakoscPowietrza = () => (
            
         <button className="hoverr" style={{border: ' 10px solid #1B4778'  , backgroundColor: 'rgb(66, 124, 191)' }}>
                 <NavLink
-                className="navigationItemLink2" id="pierwszy" to="pogoda-aktualna">Aktualna pogoda
+                className="navigationItemLink2" id="pierwszy" to="mapa-pogody">Mapa pogody
                 </NavLink>
             </button>
             <button className="hoverr" style={{border: ' 10px solid #1B4778' , backgroundColor: 'rgb(66, 124, 191)'} }>
@@ -50,7 +52,7 @@ const ViewJakoscPowietrza = () => (
                 </NavLink>
             </button>
         </div>
-        </>
+        </div>
     
     
 )
