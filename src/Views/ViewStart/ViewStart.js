@@ -2,7 +2,6 @@ import React from "react";
 import ViewJakoscPowietrza from "./ViewJakoscPowietrza/ViewJakoscPowietrza";
 import ViewPogodaMiejscowa from "./ViewPogodaMiejscowa/ViewPogodaMiejscowa";
 
-import sloneczko from "../../assets/weather/sloneczko.png";
 
 import przejasnienia from "../../assets/weather/002-cloudy-13.svg";
 import snieg from "../../assets/weather/003-snow-8.svg";
@@ -186,9 +185,9 @@ class ViewStart extends React.Component {
     return ( 
       <div className="ViewStart__contener">
         <h1 className="ViewStart__h1">
-          <img className="viewStart_sniezka" src={sniezka} /> Witam na stronie
+          <img className="viewStart_sniezka" src={sniezka} alt="sniezka" /> Witam na stronie
           poświęconej pogodzie
-          <img className="viewStart_sniezka1" src={sniezka} />
+          <img className="viewStart_sniezka1" src={sniezka} alt="sniezka" />
         </h1>
         <h2 className="ViewStart__h2">
           Nie chcesz zmoknąć? <span>Sprawdź pogodę!</span>

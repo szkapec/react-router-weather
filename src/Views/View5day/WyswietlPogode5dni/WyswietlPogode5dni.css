@@ -1,0 +1,113 @@
+.View5day__container {
+    min-height: 100vh;
+    background-color: #a6c2e2;
+    text-align: center;
+}
+.View5day__input {
+    padding: 10px 15px;
+    border-radius: 30px;
+    border: 1px solid black;
+    margin: 20px 0px 30px 20px;
+    width: 150px;
+}
+
+.piecDni__h3 {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+
+}
+
+.piecDni__wyniki {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.piecDni__wyniki > div {
+   margin-top: 10px;
+}
+
+.piecDni__wyniki > img {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.View5day__pogodaDla {
+    font-size: 20px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.View5Day__znacznik {
+    margin: 0px 5px;
+}
+
+.View5Day__znacznik:first-letter { 
+    display: flex;
+    text-transform: uppercase;
+ }
+
+@media(min-width:450px) {
+    .piecDni__h3 {
+        font-size: 22px;
+        padding: 22px 0;
+    
+    }
+    
+    .piecDni__wyniki {
+        font-size: 18px;
+    }
+    .View5day__input {
+        padding: 10px 15px;
+        width: 200px;
+    }
+}
+
+@media(min-width:700px) {
+
+    .piecDni__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 350px);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        background-color: #a6c2e2;
+    }
+    .View5day__pogodaDla {
+        font-size: 22px;
+    }
+    
+}
+
+@media(min-width:1100px) {
+
+    .piecDni__grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(1, 350px);
+
+    }
+    .piecDni__h3 {
+        font-size: 24px;
+        padding: 26px 0;
+    
+    }
+    
+    .piecDni__wyniki {
+        font-size: 20px;
+    }
+    .piecDni__wyniki div {
+        margin-top: 20px;
+    }
+    .piecDni__wyniki > img {
+        width: 80px;
+        height: 80px;
+    }
+    .View5day__pogodaDla {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+}

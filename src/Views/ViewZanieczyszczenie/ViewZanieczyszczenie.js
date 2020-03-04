@@ -88,11 +88,11 @@ fuk = () => {
                         <div>{wynikZanieczyszczenia>=300?' Niebezpieczny!': wynikZanieczyszczenia>=201? 'Bardzo niezdrowe' : wynikZanieczyszczenia>=151?'Niezdrowy': wynikZanieczyszczenia>=101?'Niezdrowy dla wrażliwych' : wynikZanieczyszczenia>=51?'Umiarkowany': wynikZanieczyszczenia>0&&wynikZanieczyszczenia<51 ? 'Dobry' : null}</div>
                     </div>
                     <div className="ViewZanieczyszczenia__wynik-CO">
-                        <div> {co&&`CO:${co}`}</div>
-                        <div>{no2&&`NO2: ${no2}`}</div>
-                        <div> {h&&`H: ${h}`}</div>
-                        <div> {p&&`P: ${p}`}</div>
-                        <div> {pm10&&`PM10: ${pm10}`}</div>
+                        <div> <b>{co&&`CO: ${co}`}</b></div>
+                        <div><b>{no2&&`NO2: ${no2}`}</b></div>
+                        <div> <b>{h&&`H: ${h}`}</b></div>
+                        <div><b> {p&&`P: ${p}`}</b></div>
+                        <div> <b>{pm10&&`PM10: ${pm10}`}</b></div>
                     </div>
                 
                 </div>

@@ -4,7 +4,6 @@ import {NavLink} from 'react-router-dom';
 import '../viewStart.scss';
 import '../../../components/Header/header.scss';
 
-const mediaMatch = window.matchMedia('(min-width: 1000)');
 const ViewJakoscPowietrza = () => (
     <div>
     <div className="ViewJakoscPowietrza__styleGrid" style={{

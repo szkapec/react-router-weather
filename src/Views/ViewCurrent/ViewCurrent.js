@@ -56,7 +56,7 @@ componentDidUpdate(prevProps,prevState) {
                 for(var i=0; i<15;i++){
                     if(pojedynczy.list[i]){
                         let godzina = pojedynczy.list[i].dt_txt.substring(11,13);
-                        if(this.state.wartoscSuwaka==24){
+                        if(this.state.wartoscSuwaka===24){
                             this.setState({
                                 wartoscSuwaka: '00'
                             })
@@ -151,7 +151,7 @@ componentDidUpdate(prevProps,prevState) {
                     Podaj miasto: <input className="ViewCurrent_input__miasto_text" onChange={this.changeInput} type="text" placeholder="wpisz miasto"></input>
                 </div>
                 <div>
-                    {this.state.opadyA? <WyswietlAll props={this.state}/>: this.state.miasto.length>4 && this.state.miasto!='Lublin' ? 
+                    {this.state.opadyA? <WyswietlAll props={this.state}/>: this.state.miasto.length>4 && this.state.miasto!=='Lublin' ? 
                     (<div className="ViewCurrent_wyswietlenieWarunkowe">Trwa Wyszukiwanie...</div>) : null}
                     {this.state.opadyA?<Suwak onSubmit={this.sprawdzWartoscSuwaka}/>:null}
                 </div>

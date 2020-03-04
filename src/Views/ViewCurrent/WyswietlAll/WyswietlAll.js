@@ -3,7 +3,6 @@ import './WyswietlAll.css';
 import przejasnienia from '../../../assets/weather/002-cloudy-13.svg';
 import deszcz from '../../../assets/weather/009-rain-26.svg';
 import slonce from '../../../assets/weather/013-sun-8.svg';
-import wiatr from '../../../assets/weather/027-wind-sign.svg';
 import snieg from '../../../assets/weather/003-snow-8.svg';
 
 
