@@ -68,7 +68,7 @@ class ViewPogodaMiejscowa extends React.Component {
                             fetchL: poj,
                         })
                     }
-                    else console.log("blad")
+                    else console.log("Niepoprawna miejscowość")
                 })
         })}}
 

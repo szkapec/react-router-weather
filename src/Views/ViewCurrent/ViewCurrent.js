@@ -1,7 +1,6 @@
 import React from 'react';
 import Suwak from './Suwak/Suwak';
 import WyswietlAll from './WyswietlAll/WyswietlAll'
-
 class ViewCurrent extends React.Component {
     state= {
         wartoscSuwaka: '',

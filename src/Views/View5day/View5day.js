@@ -52,7 +52,7 @@ class View5day extends React.Component {
                     if(item.ok) {
                         return item
                     }
-                    throw Error("Blad")
+                    throw Error("Niepoprawna miejscowosc")
                 })
                 .then(item => item.json())
                 .then(item => {
@@ -118,7 +118,7 @@ class View5day extends React.Component {
                 })
 
                 .catch(error => {
-                    console.log(error+'errory')
+                    console.log(error+ ' niepoprawne dane wejsciowe')
                     this.setState({
                         temA: '',
                         cisA: '',
