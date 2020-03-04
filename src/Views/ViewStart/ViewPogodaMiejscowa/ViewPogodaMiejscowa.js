@@ -113,7 +113,7 @@ class ViewPogodaMiejscowa extends React.Component {
                 <div style={{borderTop: '1px solid black'}}><div>{this.state.fetchG.name ? this.state.fetchG.main.temp_max : null}&#176;C</div> </div>
                 <div className="ViewPogodaImagesDiv">
                 {this.state.fetchG.name ? this.state.fetchG.main.humidity<70?<img alt="przejasnienia" className="viewPogodaImages" src={przejasnienia}/>:this.state.fetchG.main.humidity>70&&this.state.fetchG.clouds.all>70?
-                <img className="viewPogodaImages" alt="deszcz" src={deszcz}/>: this.state.fetchG.clouds.all<40 ? <img className="viewPogodaImages" alt="slonce" src={slonce}/> : <img className="viewPogodaImages" alt="tezchyba" lassName="viewPogodaImages"  src={przejasnienia}/> :null} 
+                <img className="viewPogodaImages" alt="deszcz" src={deszcz}/>: this.state.fetchG.clouds.all<40 ? <img className="viewPogodaImages" alt="slonce" src={slonce}/> : <img className="viewPogodaImages" alt="tezchyba" className="viewPogodaImages"  src={przejasnienia}/> :null} 
                 </div>
                 <div style={{borderTop: '1px solid black', paddingLeft:'10px'}}><div>{this.state.fetchG.name ? this.state.fetchG.main.temp_min : null}&#176;C</div> </div>
                 <div className="ViewPogodaImagesDiv">{this.state.fetchG.name? this.state.fetchG.main.temp_min<0?<img alt="mroz" className="viewPogodaImages" src={mroz}/> : <img alt="dodatnia" className="viewPogodaImages" src={dodatniaTemp}/> : null}</div>

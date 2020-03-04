@@ -1,6 +1,6 @@
 import React from 'react';
 import WyswietlPogode5dni from './WyswietlPogode5dni/WyswietlPogode5dni';
-
+import Chatr from '../../components/Chart/Chart'
 class View5day extends React.Component {
     state = {
         flaga: false,
@@ -56,13 +56,11 @@ class View5day extends React.Component {
                 })
                 .then(item => item.json())
                 .then(item => {
-                    console.log(item.city.name)
                     for(var i=0;i<40;i++){
                         let godz12 = item.list[i].dt_txt.substring(11,19)
                         
                         if(godz12 === "12:00:00"){
                             this.index++;
-                            console.log(item.list[i])
                             if(this.index===1){
                                this.setState({
                                    temA: item.list[0].main.temp,
@@ -164,15 +162,17 @@ class View5day extends React.Component {
     render() {
        return (
             <>
+            
             <div className="View5day__container">
                 <h3 className="piecDni__h3">Podaj miasto</h3>
                 <input className="View5day__input" type="text" onChange={this.changeInput}  placeholder="Wpisz miasto"></input>
-                {this.state.temA&&<div className="View5day__pogodaDla">Pogodaa dla:  <div className="View5Day__znacznik">{this.state.value5dni}</div></div>}
-                <div className="piecDni__grid">{this.state.temA!==''?<WyswietlPogode5dni all={this.state}/> : this.state.value5dni.length>=4 ? 
+                {this.state.wilgE&&<div className="View5day__pogodaDla">Pogodaa dlaa:  <div className="View5Day__znacznik">{this.state.value5dni}</div></div>}
+                <div className="piecDni__grid">{this.state.wilgE!==''?<WyswietlPogode5dni all={this.state}/> : this.state.value5dni.length>=4 ? 
                 (<div className="ViewCurrent_wyswietlenieWarunkowe">Trwa Wyszukiwanie...</div>) : null}</div>
-                {console.log(this.state.value5dni.length)}
             </div>
-
+            
+            
+            {this.state.wilgE&&<Chatr all={this.state}/>}
             </>
         )
     }
