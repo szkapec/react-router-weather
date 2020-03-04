@@ -56,8 +56,8 @@ const WyswietlAll = ({props}) => {
                     
                     <div>{tempD?(<div><span className="pogrubienie">Temperatura: </span>{Math.floor(tempD)}&#176;C</div>) : null}</div>
                     <div>{wilgotnoscD?(<div><span className="pogrubienie">Wilgotność: </span>{wilgotnoscD}%</div>): null}</div>
-                    <div>{opadyD?(<div><span className="pogrubienie">Deszcz: </span>{opadyD}%</div>): null}</div>
-                    <div style={{padding: '10px 0 0 30px', fontWeight:'700'}}>{wilgotnoscD?opadyD>75 ? 'Deszcz' : opadyD<40 ? 'Słońce' : 'Przejaśnienia' : null}</div>
+                    <div>{wilgotnoscD?(<div><span className="pogrubienie">Deszcz: </span>{opadyD?opadyD:"Brak danych"}%</div>): null}</div>
+                    <div style={{padding: '10px 0 0 30px', fontWeight:'700'}}>{wilgotnoscD?opadyD>75 ? 'Deszczowo' : opadyD<40 ? 'Słonecznie' : 'Liczne przejaśnienia' : null}</div>
                     <div>{wiatrD?(<div><span className="pogrubienie">Wiatr: </span>{Math.floor(wiatrD*5)} km/h</div>): null}</div>
                     <div></div>
                     <div>{godzinaD?(<div><span className="pogrubienie">Godzina: </span>{godzinaD.substring(11,16)}</div>): null}</div>

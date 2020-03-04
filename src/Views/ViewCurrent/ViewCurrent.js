@@ -51,16 +51,34 @@ componentDidUpdate(prevProps,prevState) {
                 let samaGodzinaA = pojedynczy.list[0].dt_txt.substring(11,19)
                 let samaGodzinaB = pojedynczy.list[1].dt_txt.substring(11,19)
                 let samaGodzinaC = pojedynczy.list[2].dt_txt.substring(11,19)
-
-
-                for(var i=0; i<15;i++){
+              //12
+                for(var i=0; i<10;i++){
                     if(pojedynczy.list[i]){
                         let godzina = pojedynczy.list[i].dt_txt.substring(11,13);
-                        if(this.state.wartoscSuwaka===24){
+                        
+                        console.log(this.state.wartoscSuwaka)
+                        if(this.state.wartoscSuwaka==='1')
+                        {
                             this.setState({
-                                wartoscSuwaka: '00'
+                                wartoscSuwaka: '0'
                             })
                         }
+                        
+                        else if(this.state.wartoscSuwaka==='2'||this.state.wartoscSuwaka==='4')
+                        {
+                            this.setState({
+                                wartoscSuwaka: '3'
+                            })
+                        }
+                        else if(this.state.wartoscSuwaka==='5'||this.state.wartoscSuwaka==='7') this.setState({wartoscSuwaka: '6'})
+                        else if(this.state.wartoscSuwaka==='8'||this.state.wartoscSuwaka==='10') this.setState({wartoscSuwaka: '9'})
+                        else if(this.state.wartoscSuwaka==='11'||this.state.wartoscSuwaka==='13') this.setState({wartoscSuwaka: '12'})
+                        else if(this.state.wartoscSuwaka==='14'||this.state.wartoscSuwaka==='16') this.setState({wartoscSuwaka: '15'})
+                        else if(this.state.wartoscSuwaka==='17'||this.state.wartoscSuwaka==='19') this.setState({wartoscSuwaka: '18'})
+                        else if(this.state.wartoscSuwaka==='20'||this.state.wartoscSuwaka==='22') this.setState({wartoscSuwaka: '21'})
+                        else if(this.state.wartoscSuwaka==='23'||this.state.wartoscSuwaka==='00') this.setState({wartoscSuwaka: '24'})
+                        
+
                         if(godzina===this.state.wartoscSuwaka||godzina===0+this.state.wartoscSuwaka){
                             this.setState({
                                 tempD: pojedynczy.list[i].main.temp,
@@ -139,6 +157,7 @@ componentDidUpdate(prevProps,prevState) {
     }
 
     sprawdzWartoscSuwaka = (text) => {
+     
         this.setState({
             wartoscSuwaka: text,
         })
