@@ -21,7 +21,7 @@
 .piecDni__wyniki {
     font-size: 16px;
     text-align: center;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 
@@ -57,6 +57,11 @@
     -ms-filter: invert(100%);
 }
 
+
+.chartjs-render-monitor {
+    background-color: #a6c2e2;
+    padding-top: 40px;
+}
 
 @media(min-width:450px) {
     .piecDni__h3 {

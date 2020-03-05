@@ -1,6 +1,7 @@
 import React from 'react';
 import WyswietlPogode5dni from './WyswietlPogode5dni/WyswietlPogode5dni';
 import Chatr from '../../components/Chart/Chart'
+import './WyswietlPogode5dni/WyswietlPogode5dni.css'
 class View5day extends React.Component {
     state = {
         flaga: false,
@@ -171,8 +172,10 @@ class View5day extends React.Component {
                 (<div className="ViewCurrent_wyswietlenieWarunkowe">Trwa Wyszukiwanie...</div>) : null}</div>
             </div>
             
+            <div className="View5day__container_Chatr">
+            {this.state.wilgE&&<Chatr all={this.state} legendPosition="top" titleText="Wykres 5 dni pogody" displayTitle/>}
+            </div>
             
-            {this.state.wilgE&&<Chatr all={this.state}/>}
             </>
         )
     }

@@ -1,12 +1,14 @@
 import React from 'react';
 import Suwak from './Suwak/Suwak';
-import WyswietlAll from './WyswietlAll/WyswietlAll'
+import WyswietlAll from './WyswietlAll/WyswietlAll';
+import Chart from '../../components/Chart/Chart';
+
 class ViewCurrent extends React.Component {
     state= {
         wartoscSuwaka: '',
         flaga: false,
         miasto: 'Lublin',
-        tempA: '',
+        temA: '',
         wilgotnoscA: '',
         opadyA: '',
         wiatrA: '',
@@ -15,18 +17,20 @@ class ViewCurrent extends React.Component {
         zachmurzenieA: '',
 
         wilgotnoscB:'',
+        temB: '',
         opadyB: '',
         wiatrB: '',
         ktoraGodzinaB: '',
         zachmurzenieB: '',
 
+        temC: '',
         wilgotnoscC:'',
         opadyC: '',
         wiatrC: '',
         ktoraGodzinaC: '',
         zachmurzenieC: '',
 
-        tempD: '',
+        temD: '',
         godzinaD: '',
         wiatrD:'',
         opadyD: '',
@@ -80,7 +84,7 @@ componentDidUpdate(prevProps,prevState) {
 
                         if(godzina===this.state.wartoscSuwaka||godzina===0+this.state.wartoscSuwaka){
                             this.setState({
-                                tempD: pojedynczy.list[i].main.temp,
+                                temD: pojedynczy.list[i].main.temp,
                                 godzinaD: pojedynczy.list[i].dt_txt,
                                 wilgotnoscD: pojedynczy.list[i].main.humidity,
                                 opadyD: pojedynczy.list[i].clouds.all,
@@ -95,7 +99,7 @@ componentDidUpdate(prevProps,prevState) {
 
                     this.setState({
                         flaga: false,
-                        tempA: pojedynczy.list[0].main.temp,
+                        temA: pojedynczy.list[0].main.temp,
                         wilgotnoscA: pojedynczy.list[0].main.humidity,
                         opadyA: pojedynczy.list[0].clouds.all,
                         wiatrA: pojedynczy.list[0].wind.speed,
@@ -103,14 +107,14 @@ componentDidUpdate(prevProps,prevState) {
                         cityA: pojedynczy.city.name,
                         zachmurzenieA: pojedynczy.list[0].clouds.all,
                         
-                        tempB: pojedynczy.list[1].main.temp,
+                        temB: pojedynczy.list[1].main.temp,
                         wilgotnoscB: pojedynczy.list[1].main.humidity,
                         opadyB: pojedynczy.list[1].clouds.all,
                         wiatrB: pojedynczy.list[1].wind.speed,
                         ktoraGodzinaB: samaGodzinaB,
                         zachmurzenieB: pojedynczy.list[1].clouds.all,
 
-                        tempC: pojedynczy.list[2].main.temp,
+                        temC: pojedynczy.list[2].main.temp,
                         wilgotnoscC: pojedynczy.list[2].main.humidity,
                         opadyC: pojedynczy.list[2].clouds.all,
                         wiatrC: pojedynczy.list[2].wind.speed,
@@ -125,20 +129,20 @@ componentDidUpdate(prevProps,prevState) {
                 console.log(error+ 'error')
                 this.setState({
                     flaga: true,
-                    tempA: '',
+                    temA: '',
                     wilgotnoscA: '',
                     opadyA: '',
                     wiatrA: '',
                     ktoraGodzinaA: '',
                     cityA:'',
                     
-                    tempB:'',
+                    temB:'',
                     wilgotnoscB:'',
                     opadyB: '',
                     wiatrB: '',
                     ktoraGodzinaB:'',
 
-                    tempC:'',
+                    temC:'',
                     wilgotnoscC:'',
                     opadyC: '',
                     wiatrC: '',
@@ -172,6 +176,7 @@ componentDidUpdate(prevProps,prevState) {
                     {this.state.opadyA? <WyswietlAll props={this.state}/>: this.state.miasto.length>4 && this.state.miasto!=='Lublin' ? 
                     (<div className="ViewCurrent_wyswietlenieWarunkowe">Trwa Wyszukiwanie...</div>) : null}
                     {this.state.opadyA?<Suwak onSubmit={this.sprawdzWartoscSuwaka}/>:null}
+                    
                 </div>
             </div>
             </>
