@@ -3,11 +3,11 @@ import { Route, Switch, HashRouter} from 'react-router-dom';
 
 import ViewCurrent from './Views/ViewCurrent/ViewCurrent';
 import ViewStart from './Views/ViewStart/ViewStart';
-import Header from './components/Header/Header';
+import NavBar from './components/NavBar/NavBar';
 import View5day from './Views/View5day/View5day';
-import ViewZanieczyszczenie from './Views/ViewZanieczyszczenie/ViewZanieczyszczenie';
-import ViewContact from './Views/ViewContact/ViewContact';
+import ViewImpurity from './Views/ViewImpurity/ViewImpurity';
 import ViewMap from './Views/ViewMap/ViewMap';
+import Footer from './components/Footer/Footer';
 import './index.css';
 class Root extends React.Component {
   state = {}
@@ -17,16 +17,15 @@ class Root extends React.Component {
     return(
       <>
       <HashRouter basename='/'>
-          <Header/>
+          <NavBar/>
           <Switch>
             <Route exact path="/" component={ViewStart} /> 
             <Route path="/pogoda" component={ViewCurrent} /> 
             <Route path="/pogoda-5-dni" component={View5day} /> 
-            <Route path="/zanieczyszczenia" component={ViewZanieczyszczenie} /> 
+            <Route path="/zanieczyszczenia" component={ViewImpurity} /> 
             <Route path="/mapa-pogody" component={ViewMap} /> 
-            <Route path="/contact" component={ViewContact} /> 
-            
           </Switch>
+          <Footer/>
           {this.state.isModalOpen && (
             <>
             

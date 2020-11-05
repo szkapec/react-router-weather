@@ -1,17 +1,11 @@
 import React from 'react';
 import { Bar, Line, Pie } from 'react-chartjs-2';
-
+import styled from 'styled-components';
 class Chart extends React.Component {
 
-
     constructor(props) {
-     
         super(props);
-
-
-        
         const {temA,temB,temC,temD,temE, dataC, dataD, dataE} = this.props.all;
-
 
         this.state = {
             chartData: {
@@ -25,9 +19,6 @@ class Chart extends React.Component {
                             temC,
                             temD,
                             temE,
-                          
-                            
-                          
                         ],
                         backgroundColor: [
                             'rgba(10,99,132,0.6)',
@@ -41,7 +32,6 @@ class Chart extends React.Component {
             }
         }
     }
-  
     static defaultProps = {
         displayTitle: true,
         displeyLegend: true,
@@ -49,11 +39,10 @@ class Chart extends React.Component {
         titleText: 'Wykres 5 dni pogody',
     }
 
-
     render() {
+        
         return (
-            <>
-            <div className="chart">
+            <StyledChart className="chart">
             <Bar
             data={this.state.chartData}
             width={300}
@@ -106,12 +95,15 @@ class Chart extends React.Component {
                }
                }}
         />
+        </StyledChart>
 
-            </div>
-
-            </>
         )
     }
 }
 
 export default Chart; 
+
+const StyledChart = styled.div`
+    max-width: 1000px;
+    margin: 40px auto 0;
+`

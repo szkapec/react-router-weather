@@ -16,7 +16,29 @@ html {
   vertical-align: baseline;
   text-decoration: none;
   outline: 0;
+  font-family: 'Source Sans Pro', sans-serif;
   }
 
+  #root {
+    background-color: white;
+    /* max-width: 1240px;
+    margin: 0 auto; */
+  }
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&family=Lato:ital,wght@0,700;1,300;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chilanka&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Hind+Siliguri:wght@300;700&family=Open+Sans+Condensed:wght@200;300;400;700&family=Peddana&family=Roboto:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;1,900&display=swap');
+
+/* // font-family: 'Chilanka', cursive;
+// font-family: 'Dancing Script', cursive;
+
+// font-family: 'Hind Siliguri', sans-serif;
+
+// font-family: 'Open Sans Condensed', sans-serif;
+
+// font-family: 'Peddana', serif;
+
+// font-family: 'Roboto', sans-serif;
+// font-family: 'Source Sans Pro', sans-serif; */

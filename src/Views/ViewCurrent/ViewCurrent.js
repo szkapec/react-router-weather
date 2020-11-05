@@ -1,8 +1,8 @@
 import React from 'react';
-import Suwak from './Suwak/Suwak';
-import WyswietlAll from './WyswietlAll/WyswietlAll';
+import Slide from './Slide/Slide';
+import ViewsAll from './ViewsAll/ViewsAll';
 import Chart from '../../components/Chart/Chart';
-
+import Global from '../ViewStart/Global';
 class ViewCurrent extends React.Component {
     state= {
         wartoscSuwaka: '',
@@ -35,31 +35,37 @@ class ViewCurrent extends React.Component {
         wiatrD:'',
         opadyD: '',
         wilgotnoscD: '',
+
+        valueD: [],
+        ktoraGodzinaD: '',
     }
  
+componentDidMount(){
+    window.scrollTo(0, 0);
+}
 
 componentDidUpdate(prevProps,prevState) {
     if(this.state.miasto.length<3) return
     if(prevState.miasto!== this.state.miasto || prevState.wartoscSuwaka!==this.state.wartoscSuwaka){
        const apiCurrent = `https://api.openweathermap.org/data/2.5/forecast?q=${this.state.miasto}&appid=8c0ca88fe2b8fe6d6c954e8c13f95f86&units=metric`;
             fetch(apiCurrent)
-            .then(pojedynczy => {
-                if(pojedynczy.ok) {
-                    return pojedynczy
+            .then(item => {
+                if(item.ok) {
+                    return item
                 }
                 throw Error("Blad")
             })
-            .then(pojedynczy => pojedynczy.json())
-            .then(pojedynczy => {
-                let samaGodzinaA = pojedynczy.list[0].dt_txt.substring(11,19)
-                let samaGodzinaB = pojedynczy.list[1].dt_txt.substring(11,19)
-                let samaGodzinaC = pojedynczy.list[2].dt_txt.substring(11,19)
+            .then(item => item.json())
+            .then(item => {
+                let samaGodzinaA = item.list[0].dt_txt.substring(11,19)
+                let samaGodzinaB = item.list[1].dt_txt.substring(11,19)
+                let samaGodzinaC = item.list[2].dt_txt.substring(11,19)
+                let samaGodzinaD = item.list[3].dt_txt.substring(11,19)
               //12
                 for(var i=0; i<10;i++){
-                    if(pojedynczy.list[i]){
-                        let godzina = pojedynczy.list[i].dt_txt.substring(11,13);
+                    if(item.list[i]){
+                        let godzina = item.list[i].dt_txt.substring(11,13);
                         
-                        console.log(this.state.wartoscSuwaka)
                         if(this.state.wartoscSuwaka==='1')
                         {
                             this.setState({
@@ -84,11 +90,11 @@ componentDidUpdate(prevProps,prevState) {
 
                         if(godzina===this.state.wartoscSuwaka||godzina===0+this.state.wartoscSuwaka){
                             this.setState({
-                                temD: pojedynczy.list[i].main.temp,
-                                godzinaD: pojedynczy.list[i].dt_txt,
-                                wilgotnoscD: pojedynczy.list[i].main.humidity,
-                                opadyD: pojedynczy.list[i].clouds.all,
-                                wiatrD: pojedynczy.list[i].wind.speed,
+                                temD: item.list[i].main.temp,
+                                godzinaD: item.list[i].dt_txt,
+                                wilgotnoscD: item.list[i].main.humidity,
+                                opadyD: item.list[i].clouds.all,
+                                wiatrD: item.list[i].wind.speed,
                                 
                             })
                         }
@@ -99,34 +105,34 @@ componentDidUpdate(prevProps,prevState) {
 
                     this.setState({
                         flaga: false,
-                        temA: pojedynczy.list[0].main.temp,
-                        wilgotnoscA: pojedynczy.list[0].main.humidity,
-                        opadyA: pojedynczy.list[0].clouds.all,
-                        wiatrA: pojedynczy.list[0].wind.speed,
+                        temA: item.list[0].main.temp,
+                        wilgotnoscA: item.list[0].main.humidity,
+                        opadyA: item.list[0].clouds.all,
+                        wiatrA: item.list[0].wind.speed,
                         ktoraGodzinaA: samaGodzinaA,
-                        cityA: pojedynczy.city.name,
-                        zachmurzenieA: pojedynczy.list[0].clouds.all,
+                        cityA: item.city.name,
+                        zachmurzenieA: item.list[0].clouds.all,
                         
-                        temB: pojedynczy.list[1].main.temp,
-                        wilgotnoscB: pojedynczy.list[1].main.humidity,
-                        opadyB: pojedynczy.list[1].clouds.all,
-                        wiatrB: pojedynczy.list[1].wind.speed,
+                        temB: item.list[1].main.temp,
+                        wilgotnoscB: item.list[1].main.humidity,
+                        opadyB: item.list[1].clouds.all,
+                        wiatrB: item.list[1].wind.speed,
                         ktoraGodzinaB: samaGodzinaB,
-                        zachmurzenieB: pojedynczy.list[1].clouds.all,
+                        zachmurzenieB: item.list[1].clouds.all,
 
-                        temC: pojedynczy.list[2].main.temp,
-                        wilgotnoscC: pojedynczy.list[2].main.humidity,
-                        opadyC: pojedynczy.list[2].clouds.all,
-                        wiatrC: pojedynczy.list[2].wind.speed,
+                        temC: item.list[2].main.temp,
+                        wilgotnoscC: item.list[2].main.humidity,
+                        opadyC: item.list[2].clouds.all,
+                        wiatrC: item.list[2].wind.speed,
                         ktoraGodzinaC: samaGodzinaC,
-                        zachmurzenieC: pojedynczy.list[2].clouds.all,
+                        zachmurzenieC: item.list[2].clouds.all,
 
-
+                        valueD: item.list,
+                        ktoraGodzinaD:  samaGodzinaD,
                     })
                 
             })
             .catch(error => {
-                console.log(error+ 'error')
                 this.setState({
                     flaga: true,
                     temA: '',
@@ -147,6 +153,8 @@ componentDidUpdate(prevProps,prevState) {
                     opadyC: '',
                     wiatrC: '',
                     ktoraGodzinaC:'',
+
+                    valueC: [],
                 })
             })
         }
@@ -159,7 +167,7 @@ componentDidUpdate(prevProps,prevState) {
         })
     }
 
-    sprawdzWartoscSuwaka = (text) => {
+    valueSlide = (text) => {
      
         this.setState({
             wartoscSuwaka: text,
@@ -168,16 +176,18 @@ componentDidUpdate(prevProps,prevState) {
     render() {
         return (
             <>
+            <Global/>
             <div className="ViewCurrent__container">
-                <div className="ViewCurrent_input__miasto">
-                    Podaj miasto: <input className="ViewCurrent_input__miasto_text" onChange={this.changeInput} type="text" placeholder="wpisz miasto"></input>
+                <div className="ViewCurrent__info">
+                    <div className="description">Godzinna prognoza pogody</div>
+                    <div className="ViewCurrent_input__miasto">
+                        Podaj miasto: <input className="ViewCurrent_input__miasto_text" onChange={this.changeInput}  type="text" placeholder="wpisz miasto"></input>
+                    </div>
                 </div>
-                <div>
-                    {this.state.opadyA? <WyswietlAll props={this.state}/>: this.state.miasto.length>4 && this.state.miasto!=='Lublin' ? 
+                    {this.state.opadyA? <ViewsAll props={this.state}/>: this.state.miasto.length>4 && this.state.miasto!=='Lublin' ? 
                     (<div className="ViewCurrent_wyswietlenieWarunkowe">Trwa Wyszukiwanie...</div>) : null}
-                    {this.state.opadyA?<Suwak onSubmit={this.sprawdzWartoscSuwaka}/>:null}
+                    {this.state.opadyA?<Slide onSubmit={this.valueSlide}/>:null}
                     
-                </div>
             </div>
             </>
         )}} 

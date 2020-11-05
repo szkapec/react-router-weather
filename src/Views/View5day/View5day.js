@@ -1,7 +1,9 @@
 import React from 'react';
-import WyswietlPogode5dni from './WyswietlPogode5dni/WyswietlPogode5dni';
+import ViewsWeather5day from './ViewsWeather5day/ViewsWeather5day';
 import Chatr from '../../components/Chart/Chart'
-import './WyswietlPogode5dni/WyswietlPogode5dni.css'
+import './ViewsWeather5day/viewsWeather5day.css';
+import Global from '../ViewStart/Global';
+
 class View5day extends React.Component {
     state = {
         flaga: false,
@@ -163,19 +165,23 @@ class View5day extends React.Component {
     render() {
        return (
             <>
-            
-            <div className="View5day__container">
-                <h3 className="piecDni__h3">Podaj miasto</h3>
-                <input className="View5day__input" type="text" onChange={this.changeInput}  placeholder="Wpisz miasto"></input>
-                {this.state.wilgE&&<div className="View5day__pogodaDla">Pogodaa dlaa:  <div className="View5Day__znacznik">{this.state.value5dni}</div></div>}
-                <div className="piecDni__grid">{this.state.wilgE!==''?<WyswietlPogode5dni all={this.state}/> : this.state.value5dni.length>=4 ? 
-                (<div className="ViewCurrent_wyswietlenieWarunkowe">Trwa Wyszukiwanie...</div>) : null}</div>
+            <Global/>
+            <div className="ViewCurrent__container">
+                <div className="description">Prognoza pogody na pięć dni</div>
+            <div className="ViewCurrent_input__miasto">
+                    Podaj miasto: <input className="ViewCurrent_input__miasto_text" onChange={this.changeInput} type="text" placeholder="wpisz miasto"></input>
             </div>
+                {/* <h3 className="piecDni__h3">Podaj miasto</h3>
+                <input className="View5day__input" type="text" onChange={this.changeInput}  placeholder="Wpisz miasto"></input> */}
+                {this.state.wilgE&&<div className="View5day__pogodaDla">Pogoda dla:  <div className="View5Day__znacznik">{this.state.value5dni}</div></div>}
+                <div className="piecDni__grid">{this.state.wilgE!==''?<ViewsWeather5day all={this.state}/> : this.state.value5dni.length>=4 ? 
+                (<div className="ViewCurrent_wyswietlenieWarunkowe">Trwa Wyszukiwanie...</div>) : null}</div>
+           
             
             <div className="View5day__container_Chatr">
-            {this.state.wilgE&&<Chatr all={this.state} legendPosition="top" titleText="Wykres 5 dni pogody" displayTitle/>}
+            {this.state.wilgE&&<Chatr all={this.state} legendPosition="top" titleText="Wykres temperatury dla 5 dni" displayTitle/>}
             </div>
-            
+            </div>
             </>
         )
     }

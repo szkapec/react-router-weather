@@ -1,7 +1,7 @@
 .ViewMap__contener {
-
-    background-color: rgb(166, 194, 226);
+    background-color: white;
     min-height: 100vh;
+    padding-top: 40px;
 }
 
 
@@ -13,6 +13,7 @@
 .ViewMap__chmury {
     padding-top: 20px;
     font-weight: 700;
+    font-size: 22px;
 }
 
 .ViewMap__grid-ul {
@@ -29,19 +30,26 @@
     padding: 5px 10px;
     margin-top: 10px;
     width: 170px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
     a {
         text-decoration: none;
         list-style: none;
         color: black;
     }
+
+
 }
+
 .ViewMap__grid-button:hover {
-    font-weight: 700;
+    text-decoration: underline;
 }
 
 .ViewMap__grid-img > img {
     margin: 10px;
     width: 90%;
+    border-radius: 20px;
 }
 
 
@@ -51,7 +59,10 @@
 @media(min-width: 600px) {
     .ViewMap__grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 400px);
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
     }
     .ViewMap__grid-calosc {
         text-align: center;
@@ -61,13 +72,12 @@
         margin-top: 30px;
     }
     .ViewMap__chmury {
-        font-size: 18px;
+        font-size: 24px;
     }
 }
 
 @media ( min-width: 1000px) {
     .ViewMap__grid-img > img {
-
         margin: 30px 0px 30px 0px;
         width: 400px;
         height: 400px;
@@ -76,7 +86,7 @@
         margin-top: 90px;
     }
     .ViewMap__chmury {
-        font-size: 20px;
+        font-size: 26px;
     }
     .ViewMap__grid-ul {
         font-size: 18px;
@@ -84,6 +94,7 @@
     .ViewMap__grid-button {
         padding: 10px 20px;
         margin-top: 10px;
-        width: 200px;
+        width: 240px;
+        font-size: 18px;
     }
 }
