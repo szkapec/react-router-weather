@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e2c6b98a43f3622df19acb0c4af45bbf",
+    "revision": "1d28ac9a7ce4838997f17bb6e11d5e8e",
     "url": "/react-router-weather/index.html"
   },
   {
-    "revision": "056f5e6815f91faf75c9",
-    "url": "/react-router-weather/static/css/main.c2cc0ab5.chunk.css"
+    "revision": "0a5f34a164cd61bcdf3b",
+    "url": "/react-router-weather/static/css/main.eb1b7751.chunk.css"
   },
   {
-    "revision": "d29ced935f4724aeb6e8",
-    "url": "/react-router-weather/static/js/2.da404db2.chunk.js"
+    "revision": "b4eb547ea05a59601e97",
+    "url": "/react-router-weather/static/js/2.23eaee6d.chunk.js"
   },
   {
     "revision": "e0ad3387081147deea4b08b0e0fff77f",
-    "url": "/react-router-weather/static/js/2.da404db2.chunk.js.LICENSE.txt"
+    "url": "/react-router-weather/static/js/2.23eaee6d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "056f5e6815f91faf75c9",
-    "url": "/react-router-weather/static/js/main.c91dab2c.chunk.js"
+    "revision": "0a5f34a164cd61bcdf3b",
+    "url": "/react-router-weather/static/js/main.7c5b64d2.chunk.js"
   },
   {
     "revision": "ce6248e707d304d97f25",
@@ -56,11 +56,27 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-router-weather/static/media/027-wind-sign.edf700e9.svg"
   },
   {
-    "revision": "51bbef330763b01aa69dece475bb390a",
-    "url": "/react-router-weather/static/media/092-snowflake.51bbef33.svg"
-  },
-  {
     "revision": "e4143c2f702e0a81c289eb7708481569",
     "url": "/react-router-weather/static/media/102-smartphone.e4143c2f.svg"
+  },
+  {
+    "revision": "9f7ef16deee7a82eacc42c97b6540c74",
+    "url": "/react-router-weather/static/media/night.9f7ef16d.svg"
+  },
+  {
+    "revision": "c52688aaeeef199bf000c0f77c34dc67",
+    "url": "/react-router-weather/static/media/rain.c52688aa.svg"
+  },
+  {
+    "revision": "06292d72f743221005f73e4912b23daa",
+    "url": "/react-router-weather/static/media/shadow.06292d72.svg"
+  },
+  {
+    "revision": "7368bad84c65c035c995639b6c39a20a",
+    "url": "/react-router-weather/static/media/snow.7368bad8.svg"
+  },
+  {
+    "revision": "186b3e4ed98270798555c9e323f1de32",
+    "url": "/react-router-weather/static/media/sun.186b3e4e.svg"
   }
 ]);

@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/react-router-weather/static/css/main.c2cc0ab5.chunk.css",
-    "main.js": "/react-router-weather/static/js/main.c91dab2c.chunk.js",
-    "main.js.map": "/react-router-weather/static/js/main.c91dab2c.chunk.js.map",
+    "main.css": "/react-router-weather/static/css/main.eb1b7751.chunk.css",
+    "main.js": "/react-router-weather/static/js/main.7c5b64d2.chunk.js",
+    "main.js.map": "/react-router-weather/static/js/main.7c5b64d2.chunk.js.map",
     "runtime-main.js": "/react-router-weather/static/js/runtime-main.83b0203b.js",
     "runtime-main.js.map": "/react-router-weather/static/js/runtime-main.83b0203b.js.map",
-    "static/js/2.da404db2.chunk.js": "/react-router-weather/static/js/2.da404db2.chunk.js",
-    "static/js/2.da404db2.chunk.js.map": "/react-router-weather/static/js/2.da404db2.chunk.js.map",
+    "static/js/2.23eaee6d.chunk.js": "/react-router-weather/static/js/2.23eaee6d.chunk.js",
+    "static/js/2.23eaee6d.chunk.js.map": "/react-router-weather/static/js/2.23eaee6d.chunk.js.map",
     "index.html": "/react-router-weather/index.html",
-    "precache-manifest.0e9b9d00f020fd72604c8aa3adb599e2.js": "/react-router-weather/precache-manifest.0e9b9d00f020fd72604c8aa3adb599e2.js",
+    "precache-manifest.16ac9efd334e5bd8e595f9fb2bdc4a49.js": "/react-router-weather/precache-manifest.16ac9efd334e5bd8e595f9fb2bdc4a49.js",
     "service-worker.js": "/react-router-weather/service-worker.js",
-    "static/css/main.c2cc0ab5.chunk.css.map": "/react-router-weather/static/css/main.c2cc0ab5.chunk.css.map",
-    "static/js/2.da404db2.chunk.js.LICENSE.txt": "/react-router-weather/static/js/2.da404db2.chunk.js.LICENSE.txt",
+    "static/css/main.eb1b7751.chunk.css.map": "/react-router-weather/static/css/main.eb1b7751.chunk.css.map",
+    "static/js/2.23eaee6d.chunk.js.LICENSE.txt": "/react-router-weather/static/js/2.23eaee6d.chunk.js.LICENSE.txt",
     "static/media/002-cloudy-13.svg": "/react-router-weather/static/media/002-cloudy-13.2776a530.svg",
     "static/media/003-snow-8.svg": "/react-router-weather/static/media/003-snow-8.a57b7ecd.svg",
     "static/media/009-rain-26.svg": "/react-router-weather/static/media/009-rain-26.a776a801.svg",
@@ -20,13 +20,17 @@
     "static/media/017-thermometer-7.svg": "/react-router-weather/static/media/017-thermometer-7.b2a58d9d.svg",
     "static/media/024-thermometer-5.svg": "/react-router-weather/static/media/024-thermometer-5.61d0be69.svg",
     "static/media/027-wind-sign.svg": "/react-router-weather/static/media/027-wind-sign.edf700e9.svg",
-    "static/media/092-snowflake.svg": "/react-router-weather/static/media/092-snowflake.51bbef33.svg",
-    "static/media/102-smartphone.svg": "/react-router-weather/static/media/102-smartphone.e4143c2f.svg"
+    "static/media/102-smartphone.svg": "/react-router-weather/static/media/102-smartphone.e4143c2f.svg",
+    "static/media/night.svg": "/react-router-weather/static/media/night.9f7ef16d.svg",
+    "static/media/rain.svg": "/react-router-weather/static/media/rain.c52688aa.svg",
+    "static/media/shadow.svg": "/react-router-weather/static/media/shadow.06292d72.svg",
+    "static/media/snow.svg": "/react-router-weather/static/media/snow.7368bad8.svg",
+    "static/media/sun.svg": "/react-router-weather/static/media/sun.186b3e4e.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.83b0203b.js",
-    "static/js/2.da404db2.chunk.js",
-    "static/css/main.c2cc0ab5.chunk.css",
-    "static/js/main.c91dab2c.chunk.js"
+    "static/js/2.23eaee6d.chunk.js",
+    "static/css/main.eb1b7751.chunk.css",
+    "static/js/main.7c5b64d2.chunk.js"
   ]
 }
