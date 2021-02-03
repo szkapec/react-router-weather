@@ -1,42 +1,30 @@
 import React from 'react';
-import { Route, Switch, HashRouter} from 'react-router-dom';
-
-import ViewCurrent from './Views/ViewCurrent/ViewCurrent';
-import ViewStart from './Views/ViewStart/ViewStart';
+import { Route, Switch, HashRouter } from 'react-router-dom';
+import Current from './Views/Current/Current';
+import Start from './Views/Start/ViewStart';
 import NavBar from './components/NavBar/NavBar';
-import View5day from './Views/View5day/View5day';
-import ViewImpurity from './Views/ViewImpurity/ViewImpurity';
-import ViewMap from './Views/ViewMap/ViewMap';
+import LongWeather from './Views/LongWeather/LongWeather';
+import ViewImpurity from './Views/Impurity/Impurity';
+import ViewMap from './Views/Maps/Maps';
 import Footer from './components/Footer/Footer';
-import './index.css';
-class Root extends React.Component {
-  state = {}
+import './scss/index.scss';
+import Default from './components/NavBar/Default';
 
-  render() {
-
-    return(
-      <>
-      <HashRouter basename='/'>
-          <NavBar/>
-          <Switch>
-            <Route exact path="/" component={ViewStart} /> 
-            <Route path="/pogoda" component={ViewCurrent} /> 
-            <Route path="/pogoda-5-dni" component={View5day} /> 
-            <Route path="/zanieczyszczenia" component={ViewImpurity} /> 
-            <Route path="/mapa-pogody" component={ViewMap} /> 
-          </Switch>
-          <Footer/>
-          {this.state.isModalOpen && (
-            <>
-            
-            
-            </>
-          ) }
-      </HashRouter>
-      </>
-    )
-  }
+const Root = () => {
+  return (
+    <HashRouter basename='/'>
+      <NavBar />
+      <Switch>
+        <Route exact path="/" component={Start} />
+        <Route path="/pogoda" component={Current} />
+        <Route path="/pogoda-5-dni" component={LongWeather} />
+        <Route path="/zanieczyszczenia" component={ViewImpurity} />
+        <Route path="/mapa-pogody" component={ViewMap} />
+        <Route component={Default} />
+      </Switch>
+      <Footer />
+    </HashRouter>
+  )
 }
-
 
 export default Root;

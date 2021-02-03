@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
-import './css/Footer.scss';
+import '../../scss/Footer/Footer.scss';
 export default class Footer extends Component {
     render() {
         return (
             <footer>
                 <div onClick={() => window.scrollTo(0, 0)} className="down"><i className="fa fa-angle-down"></i></div>
-
                    <div className="contact">
                         <a href="https://www.facebook.com/mateusz.kapron.50/"><i className="fab fa-facebook"></i></a>
                         <a href="https://www.linkedin.com/in/mateusz-kapro%C5%84-664b92197/"><i className="fab fa-linkedin"></i></a>  
